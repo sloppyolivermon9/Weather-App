@@ -15,7 +15,7 @@ def getLocation():
 
     rawAPIResult = requests.get(f"http://api.openweathermap.org/geo/1.0/direct?q={city}&limit={limit}&appid={key}")
     APIResult = json.loads(rawAPIResult.content)
-    print(APIResult)
+    
     location.lat,location.lon = APIResult[0]["lat"],APIResult[0]["lon"]
     return location
 
